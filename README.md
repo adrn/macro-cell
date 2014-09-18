@@ -9,13 +9,12 @@ Installation
 * Copy `macro-cell.js` to your `nbextensions` path
 * To auto-load the extension when you create a new notebook, add the following to your IPython profile's `custom.js` file:
 
-
-    // activate extensions only after Notebook is initialized
-    require(["base/js/events"], function (events) {
-        events.on("app_initialized.NotebookApp", function () {
-                IPython.load_extensions('macro-cell');
+        // activate extensions only after Notebook is initialized
+        require(["base/js/events"], function (events) {
+            events.on("app_initialized.NotebookApp", function () {
+                    IPython.load_extensions('macro-cell');
+            });
         });
-    });
 
 __The easy way__ (but note if you've created a custom profile, you must change `profile_default` to whatever your custom profile is called!):
 
