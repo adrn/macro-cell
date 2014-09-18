@@ -1,7 +1,7 @@
 macro-cell
 ==========
 
-IPython extension for defining custom cell macros.
+IPython extension for defining custom cell macros. See [this blog post](http://apwhelan.blogspot.com/2014/09/cell-macros-in-ipython-notebook.html) for the motivation / explanation.
 
 Installation
 ============
