@@ -1,0 +1,33 @@
+{
+    "cells" : [
+        {
+            "name" : "mpl+numpy",
+            "lines" : [
+                "import numpy as np",
+                "import matplotlib.pyplot as plt",
+                "%matplotlib inline"
+            ]
+        },
+        {
+            "name" : "future",
+            "lines" : [
+                "from __future__ import division, print_function",
+                "",
+                "# Standard library",
+                "import time",
+                "",
+                "# Third-party",
+                "from astropy import log as logger",
+                "import emcee",
+                "import matplotlib.pyplot as plt",
+                "import numpy as np",
+                "%matplotlib inline"
+            ]
+        }
+    ]
+}
+
+
+
+
+
