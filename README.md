@@ -6,8 +6,8 @@ IPython extension for defining custom cell macros.
 Installation
 ============
 * Clone or download this repository
-* Copy `macro-cell.js` to your `nbextensions` path
-* To auto-load the extension when you create a new notebook, add the following to your IPython profile's `custom.js` file:
+* Copy `macro-cell.js` to your `nbextensions` path (probably at `~/.ipython/nbextensions`)
+* To auto-load the extension when you create a new notebook, add the following to your IPython profile's `custom.js` file (probably at `~/.ipython/profile_default/static/custom/custom.js`):
 
         // activate extensions only after Notebook is initialized
         require(["base/js/events"], function (events) {
@@ -15,6 +15,8 @@ Installation
                     IPython.load_extensions('macro-cell');
             });
         });
+
+* Create a `macros.json` file in your IPython profile custom path (probably at `~/.ipython/profile_default/static/custom/`) which contains a JSON specification of your macro cells. See the `demo_macros.json` file in this repository for examples.
 
 Copy-paste installation
 =======================
