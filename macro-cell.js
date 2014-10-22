@@ -26,7 +26,7 @@ define( function () {
         IPython.toolbar.add_buttons_group([
             {
                 'label'   : 'Insert cell macro.',
-                'icon'    : 'icon-coffee', 
+                'icon'    : 'fa-coffee', 
                 'callback': function () {
                     var code = $("select#pick_template").find(":selected").attr("code");
                     var new_cell = IPython.notebook.insert_cell_above('code');
