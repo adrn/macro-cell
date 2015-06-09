@@ -11,12 +11,12 @@ define( function () {
 
         var pickTemplate = $("<select></select>").attr("id", "pick_template");
 
-        $.each(data['cells'], function(key, cell) { 
+        $.each(data['cells'], function(key, cell) {
             var option = $("<option></option>")
                          .attr("value", cell['name'])
                          .text(cell['name'])
                          .attr("code", cell['lines'].join('\n'));
-            pickTemplate.append(option); 
+            pickTemplate.append(option);
         });
 
         $("div#maintoolbar-container").append(pickTemplateLabel);
@@ -26,7 +26,7 @@ define( function () {
         IPython.toolbar.add_buttons_group([
             {
                 'label'   : 'Insert cell macro.',
-                'icon'    : 'icon-coffee', 
+                'icon'    : 'fa-coffee',
                 'callback': function () {
                     var code = $("select#pick_template").find(":selected").attr("code");
                     var new_cell = IPython.notebook.insert_cell_above('code');
