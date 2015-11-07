@@ -6,27 +6,15 @@ IPython extension for defining custom cell macros. See [this blog post](http://a
 Installation
 ============
 * Clone or download this repository
-* Copy `macro-cell.js` to your `nbextensions` path (probably at `~/.ipython/nbextensions`)
-* To auto-load the extension when you create a new notebook, add the following to your IPython profile's `custom.js` file (probably at `~/.ipython/profile_default/static/custom/custom.js`):
+* Copy `macro-cell.js` to one of your `nbextensions` paths. To find out where this might be, run `jupyter --paths`. You can put this in any of the "data" paths + /nbextensions/. For example, `~/Library/Jupyter/nbextensions/macro-cell.js`.
+* Create a `macros.json` file in the same nbextensions path which contains a JSON specification of your template cells. See the `demo_macros.json` file in this repository for examples.
+* To auto-load the extension when you create a new notebook, you need to enable the extension in your `nbconfig/notebook.json` file. For example, this file might be in `~/.jupyter/nbconfig/notebook.json`, and you should add an entry so that, at minimum, the JSON file looks like:
 
-        // activate extensions only after Notebook is initialized
-        require(["base/js/events"], function (events) {
-            events.on("app_initialized.NotebookApp", function () {
-                    IPython.load_extensions('macro-cell');
-            });
-        });
-
-* Create a `macros.json` file in your IPython profile custom path (probably at `~/.ipython/profile_default/static/custom/`) which contains a JSON specification of your macro cells. See the `demo_macros.json` file in this repository for examples.
-
-Copy-paste installation
-=======================
- __Note if you've created a custom profile, you must change `profile_default` to whatever your custom profile is called!__
-
-    curl -L https://rawgithub.com/adrn/macro-cell/master/macro-cell.js > $(ipython locate)/nbextensions/macro-cell.js
-    curl -L https://rawgithub.com/adrn/macro-cell/master/custom.js >> $(ipython locate)/profile_default/static/custom/custom.js
-    curl -L https://rawgithub.com/adrn/macro-cell/master/demo_macros.json > $(ipython locate)/profile_default/static/custom/macros.json
-
-You then have to edit the file `$(ipython locate)/profile_default/static/custom/macros.json` to specify your own macros. Some are included as examples.
+    {
+        "load_extensions": {
+            "macro-cell": true
+        }
+    }
 
 -----------
 
